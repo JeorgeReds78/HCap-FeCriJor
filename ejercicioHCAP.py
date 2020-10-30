@@ -45,19 +45,19 @@ def padding(A):
     return B
 
 Filtro = [[1, 1, 1],[1, 0, 1],[1, 1, 1]]
-Img = cv2.imread('Homer_Simpson.jpg')
+Img = cv2.imread('image.jpg')
 Img = cv2.cvtColor(Img,cv2.COLOR_BGR2RGB)
 
 Img2 = escala_gris(Img)
-cv2.imwrite('Homergris.jpg', Img2)
+cv2.imwrite('gris.jpg', Img2)
 
 Img_pad = padding(Img2)
 Img_pad = convolucion(Img_pad, Filtro)
-cv2.imwrite('Homerpad.jpg', Img_pad)
+cv2.imwrite('pad.jpg', Img_pad)
 
 Img_sin_pad = convolucion(Img2, Filtro)
-cv2.imwrite('Homersinpad.jpg', Img_sin_pad)
+cv2.imwrite('sinpad.jpg', Img_sin_pad)
 
 Img_BN = escala_BN(Img2)
-cv2.imwrite('HomerblancoYNegro.jpg', Img_BN)
+cv2.imwrite('blancoYNegro.jpg', Img_BN)
 
